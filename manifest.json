@@ -1,15 +1,18 @@
 {
-   "name": "The Most Awesome Dragon Site",
-   "short_name": "🐉🐉🐉",
+   "name": "MY INSPIRATION",
+   "short_name": "pravindia",
    "display": "minimal-ui",
-   "start_url": "/",
+   "start_url": "https://pravindia.ml",
    "theme_color": "#000000",
-   "background_color": "#111111",
    "icons": [
      {
        "src": "icon-192.png",
        "sizes": "192x192",
        "type": "image/png"
      }
-   ]
+   ],
+   "orientation": "any",
+   "lang": "en",
+   "scope": "",
+   "description": "This is my own PWA with a collections of my INSPIRATION"
  }
