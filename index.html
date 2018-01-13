@@ -1,151 +1,74 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-   <title>pravindia </title>
-   <meta charset="UTF-8">
-   <meta name="description" content="pravindia - Student and Web Developer">
-   <meta itemprop="description" content="pravindia - Student and Web Developer">
-   <meta name="viewport" content="width=device-width, user-scalable=no" />
-   <link rel="manifest" href="manifest.json" />
-   <script src="./pwabuilder-sw-register.js"></script>
-   <script src="./pwabuilder-sw.js"></script>
-   <meta name="mobile-web-app-capable" content="yes">
-   <meta name="apple-mobile-web-app-capable" content="yes">
-   <meta name="msapplication-starturl" content="/">
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-   <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
-   <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
-   <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
-   <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
-   <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
-   <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
-   <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
-   <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
-   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
-   <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-   <link rel="manifest" href="img/manifest.json">
-   <meta name="msapplication-TileColor" content="#ffffff">
-   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-   <meta name="theme-color" content="#000000">
-
-   <link rel="stylesheet" href="./css/bootstrap.css">
-   <script src="./js/bootstrap.js"></script>
-
-   <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-   <script type="text/javascript" src="./onepage-scroll-master/jquery.onepage-scroll.js"></script>
-   <link href='./onepage-scroll-master/onepage-scroll.css' rel='stylesheet' type='text/css'>
-   <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>TIMER</title>
+   <link rel="manifest" href="manifest.json">
+   <meta name="theme-color" content="#008000"/>
+   <link rel="stylesheet" type="text/css" href="style.css" media="all">
+   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCY6HX1zCswngbcaHyOYf__vT5BY5_ehLs",
+        authDomain: "pwapp-2687f.firebaseapp.com",
+        databaseURL: "https://pwapp-2687f.firebaseio.com",
+        projectId: "pwapp-2687f",
+        storageBucket: "pwapp-2687f.appspot.com",
+        messagingSenderId: "779238655858"
+      };
+      firebase.initializeApp(config);
+    </script>
    <script>
-      $(document).ready(function () {
-         $(".main").onepage_scroll({
-            sectionContainer: "section",
-            responsiveFallback: 600,
-            loop: true
-         });
-      });
+      function startTime() {
+         var today = new Date();
+         var h = today.getHours();
+         var m = today.getMinutes();
+         var s = today.getSeconds();
+         m = checkTime(m);
+         s = checkTime(s);
+         document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+         var t = setTimeout(startTime, 500);
+      }
+
+      function checkTime(i) {
+         if (i < 10) {
+            i = "0" + i
+         }; // add zero in front of numbers < 10
+         return i;
+      }
    </script>
-   <style>
-      h1 {
-         color: white;
-
-         -webkit-animation: bounce-in 1s ease 2s 1 normal;
-         animation: bounce-in 1s ease 2s 1 normal;
-      }
-
-      @-webkit-keyframes bounce-in {
-         0% {
-            opacity: 0;
-            -webkit-transform: scale(.3);
-            transform: scale(.3);
-         }
-         50% {
-            opacity: 1;
-            -webkit-transform: scale(1.0);
-            transform: scale(1.0);
-         }
-         70% {
-            -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-         }
-         100% {
-            -webkit-transform: scale(1);
-            transform: scale(1);
-         }
-      }
-
-      @keyframes bounce-in {
-         0% {
-            opacity: 0;
-            transform: scale(.3);
-         }
-         50% {
-            opacity: 1;
-            transform: scale(1.0);
-         }
-         70% {
-            transform: scale(0.9);
-         }
-         100% {
-            transform: scale(1);
-         }}
-         .page1 {
-            background: -moz-linear-gradient(40deg, rgba(21, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%, rgba(255, 0, 0, 0.8) 100%);
-            background: -webkit-linear-gradient(40deg, rgba(21, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%, rgba(255, 0, 0, 0.8) 100%);
-            background: -o-linear-gradient(40deg, rgba(21, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%, rgba(255, 0, 0, 0.8) 100%);
-            background: -ms-linear-gradient(40deg, rgba(21, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%, rgba(255, 0, 0, 0.8) 100%);
-            background: linear-gradient(50deg, rgba(21, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%, rgba(255, 0, 0, 0.8) 100%);
-         }
-         .page2 {
-            background-image: url("./image/Bharati.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            filter: opacity(0.82) brightness(78%) contrast(92%);
-            -webkit-filter: opacity(0.82) brightness(78%) contrast(92%);
-         }
-         .page3 {
-            background-image: url("./image/hitler.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-         }
-         .page4 {
-            background-image: url("./image/charlie.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-         }
-
-   </style>
 </head>
 
-<body>
-   <div class="wrapper">
-      <div class="main">
-         <section class="page1">
-            <div class="page_container">
-               <h1 class="text-center">MY INSPIRATIONS</h1>
-            </div>
-         </section>
-         <section class="page2">
-            <div class="page_container">
-               <h1 class="text-center"> சுப்ரமணிய பாரதியார் </h1>
-            </div>
-         </section>
-         <section class="page3">
-            <div class="page_container">
-               <h1 class="text-center"> THE DICTATOR</h1>
-            </div>
-         </section>
-         <section class="page4">
-            <div class="page_container">
-               <h1 class="text-center"> A SAD STORY </h1>
-            </div>
-         </section>
-      </div>
-   </div>
-   <script src="./js/bootstrap.js"></script>
+<body onload="startTime()"><center>
+      <h1 class="vertical-container">Time is</h1>
+   <h2 id="txt"></h2>
+   <img src="./icons/icon-128x128.png" height="50px" width="50px">
+</center>
+<script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function(reg) {
+                console.log('Service Worker Registered');
+          });
+      };
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCY6HX1zCswngbcaHyOYf__vT5BY5_ehLs",
+        authDomain: "pwapp-2687f.firebaseapp.com",
+        databaseURL: "https://pwapp-2687f.firebaseio.com",
+        projectId: "pwapp-2687f",
+        storageBucket: "pwapp-2687f.appspot.com",
+        messagingSenderId: "779238655858"
+      };
+      firebase.initializeApp(config);
+    </script>
 
 </body>
 
