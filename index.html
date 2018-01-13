@@ -31,7 +31,7 @@
 <body onload="startTime()"><center>
       <h1 class="vertical-container">Time is</h1>
    <h2 id="txt"></h2>
-   <img src="./icons/icon-128x128.png" height="50px" width="50px">
+   <img src="./icons/144x144.png" height="50px" width="50px">
 </center>
 <script>
       if('serviceWorker' in navigator) {
@@ -39,6 +39,20 @@
                 console.log('Service Worker Registered');
           });
       };
+    </script>
+    <script>
+      const messaging = firebase.messaging();
+      messaging.requestPermission()
+      .then(function() {
+        console.log('Notification permission granted.');
+        return messaging.getToken();
+      })
+      .then(function(token) {
+        console.log(token);
+      })
+      .catch(function(err) {
+        console.log('Unable to get permission to notify.', err);
+      })
     </script>
 </body>
 

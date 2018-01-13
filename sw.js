@@ -3,7 +3,7 @@ var filesToCache = [
    '/',
   '/index.html',
   '/style.css',
-  '/icons/icon-128x128.png'
+  '/icons/*'
 ];
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
