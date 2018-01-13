@@ -2,7 +2,8 @@ var cacheName = 'TIMER';
 var filesToCache = [
    '/',
   '/index.html',
-  '/style.css'
+  '/style.css',
+  '/icons/icon-128x128.png'
 ];
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');

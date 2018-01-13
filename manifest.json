@@ -1,6 +1,6 @@
 {
-   "name": "Hello World PWA",
-   "short_name": "Hi",
+   "name": "SMAZEE",
+   "short_name": "Smazee",
    "icons": [{
      "src": "icons/icon-128x128.png",
        "sizes": "128x128",
@@ -10,6 +10,6 @@
    "start_url": "/index.html",
    "gcm_sender_id": "103953800507",
    "display": "standalone",
-   "background_color": "#FF9800",
-   "theme_color": "#FF9800"
+   "background_color": "#000",
+   "theme_color": "#000"
  }

@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>TIMER</title>
    <link rel="manifest" href="manifest.json">
-   <meta name="theme-color" content="#008000"/>
+   <meta name="theme-color" content="#000"/>
    <link rel="stylesheet" type="text/css" href="style.css" media="all">
-   <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCY6HX1zCswngbcaHyOYf__vT5BY5_ehLs",
-        authDomain: "pwapp-2687f.firebaseapp.com",
-        databaseURL: "https://pwapp-2687f.firebaseio.com",
-        projectId: "pwapp-2687f",
-        storageBucket: "pwapp-2687f.appspot.com",
-        messagingSenderId: "779238655858"
-      };
-      firebase.initializeApp(config);
-    </script>
    <script>
       function startTime() {
          var today = new Date();
@@ -34,7 +20,6 @@
             h + ":" + m + ":" + s;
          var t = setTimeout(startTime, 500);
       }
-
       function checkTime(i) {
          if (i < 10) {
             i = "0" + i
@@ -43,7 +28,6 @@
       }
    </script>
 </head>
-
 <body onload="startTime()"><center>
       <h1 class="vertical-container">Time is</h1>
    <h2 id="txt"></h2>
@@ -56,20 +40,6 @@
           });
       };
     </script>
-    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCY6HX1zCswngbcaHyOYf__vT5BY5_ehLs",
-        authDomain: "pwapp-2687f.firebaseapp.com",
-        databaseURL: "https://pwapp-2687f.firebaseio.com",
-        projectId: "pwapp-2687f",
-        storageBucket: "pwapp-2687f.appspot.com",
-        messagingSenderId: "779238655858"
-      };
-      firebase.initializeApp(config);
-    </script>
-
 </body>
 
 </html>
