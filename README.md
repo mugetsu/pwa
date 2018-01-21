@@ -20,5 +20,5 @@ To learn more about PWA visit:
 ##### Explore more PWA form [PWA.ROCKS](https://pwa.rocks/ "PWA.ROCKS")
 
 ### Author
-[!
------ ***[pravindia](http://pravinkumargovindaraju.me "pravindia")***
+
+----- >  ***[pravindia](http://pravinkumargovindaraju.me "pravindia")***
